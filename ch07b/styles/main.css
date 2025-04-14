@@ -111,3 +111,68 @@ footer {
 		padding-bottom: 0; 
 	}
 }
+
+/* Navigation styles */
+.navbar {
+    width: 100%;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly; /* Evenly distributes items across the width */
+    flex-wrap: wrap; /* Allow items to wrap on small screens */
+    background-color: var(--primary-color);  /* Same background color as footer */
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    position: relative;  /* For submenu positioning */
+}
+
+.menu li a {
+    display: block;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+/* Default hover effect: italicize the text */
+.menu li a:hover {
+    font-style: italic;
+}
+
+/* Style for the current page link */
+.menu li a.current {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.menu li a.current:hover {
+    font-style: normal; /* Do not change to italic on hover */
+}
+
+/* Submenu styling */
+.submenu {
+    display: none;  /* Hidden by default */
+    position: absolute;
+    top: 100%;      /* Directly below the parent item */
+    left: 0;
+    background-color: var(--primary-color);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 100;   /* Display on top of main content */
+    min-width: 200px; /* Ensure a minimum width */
+}
+
+.submenu li a {
+    padding: 0.5em 1em;
+}
+
+/* Display the submenu on hover */
+.menu li:hover > .submenu {
+    display: block;
+}
