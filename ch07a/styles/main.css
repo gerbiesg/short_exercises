@@ -1,141 +1,159 @@
 /* variables */
 :root {
-	--primary-color: #931420;
-	--accent-color: #f6bb73;
-	--light-accent: #fffded;
-	--light: white;
-	--dark: black;
+  --primary-color: #931420;
+  --accent-color: #f6bb73;
+  --light-accent: #fffded;
+  --light: white;
+  --dark: black;
 }
 
 /* reset */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* the default styles for the elements */
 body {
-	font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
-    width: 80%;
-    margin: auto;
-    border: 3px solid var(--primary-color);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  width: 80%;
+  margin: auto;
+  border: 3px solid var(--primary-color);
 }
-header, section, aside, footer { padding: 1em; }
-h1, h2, h3, p, article { padding-bottom: .5em; }
-h1 { font-size: 150%; }
-h2 { font-size: 120%; }
-h3 { font-size: 110%; }
-a:focus, a:hover { font-style: italic; }
+
+header, section, aside, footer {
+  padding: 1em;
+}
+
+h1, h2, h3, p, article {
+  padding-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 150%;
+}
+
+h2 {
+  font-size: 120%;
+}
+
+h3 {
+  font-size: 110%;
+}
+
+a:focus, a:hover {
+  font-style: italic;
+}
 
 /* the styles for the header */
 header {
-	border-bottom: 3px solid var(--primary-color);
-	background-image: linear-gradient(30deg, 
-		var(--accent-color) 0%, 
-		var(--light-accent) 25%, 
-		var(--light) 50%, 
-		var(--light-accent) 75%, 
-		var(--accent-color) 100%);
-	& h2 {
-		font-size: 175%;
-		color: var(--primary-color);
-		padding-bottom: 0;
-	}
-	& h3 {
-		font-size: 130%;
-		font-style: italic;
-	}
-	& img {
-		float: left;
-		margin: 0 30px;
-		width: clamp(40px, 15%, 66px);
-	}
+  border-bottom: 3px solid var(--primary-color);
+  background-image: linear-gradient(30deg,
+    var(--accent-color) 0%,
+    var(--light-accent) 25%,
+    var(--light) 50%,
+    var(--light-accent) 75%,
+    var(--accent-color) 100%);
 }
 
-/* the styles for the main element */
+header h2 {
+  font-size: 175%;
+  color: var(--primary-color);
+  padding-bottom: 0;
+}
+
+header h3 {
+  font-size: 130%;
+  font-style: italic;
+}
+
+header img {
+  float: left;
+  margin: 0 30px;
+  width: clamp(40px, 15%, 66px);
+}
+
 main {
-	clear: left;
-	display: flex;
+  clear: left;
+  display: flex;
 }
 
-/* the styles for the section */
 section {
-	order: 2;
-	flex-basis: 75%;
-	& h1 {
-		color: var(--primary-color);
-		margin: 0;
-	}
+  order: 2;
+  flex-basis: 75%;
 }
 
-/* the styles for the article */
-article {
-	& img {
-		float: left;
-		margin: .25em 1em 1em 0;
-		border: 1px solid var(--dark);
-		width: min(100%, 225px);
-	}
+section h1 {
+  color: var(--primary-color);
+  margin: 0;
 }
 
-/* the styles for the aside */
+article img {
+  float: left;
+  margin: 0.25em 1em 1em 0;
+  border: 1px solid var(--dark);
+  width: min(100%, 225px);
+}
+
 aside {
-	order: 1;
-	flex-basis: 25%;
-	& h2 {
-		color: var(--primary-color);
-	}
-	& img {
-		margin-bottom: .9em;
-	}
+  order: 1;
+  flex-basis: 25%;
 }
 
-/* the styles for the footer */
+aside h2 {
+  color: var(--primary-color);
+}
+
+aside img {
+  margin-bottom: 0.9em;
+}
+
 footer {
-	background-color: var(--primary-color);
-	& p {
-		text-align: center;
-		color: white;
-		padding-bottom: 0; 
-	}
+  background-color: var(--primary-color);
+}
+
+footer p {
+  text-align: center;
+  color: white;
+  padding-bottom: 0;
 }
 
 aside nav {
-	background-color: var(--primary-color);
-	padding: 1em;
-  }
-  
-  aside nav ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-  }
-  
-  aside nav ul li {
-	margin-bottom: 0.5em;
-  }
-  
-  aside nav ul li a {
-	display: block;
-	text-decoration: none;
-	color: white;
-	font-weight: bold;          
-	padding: 0.5em;
-	transition: color 0.3s ease;
-  }
+  background-color: var(--primary-color);
+  padding: 1em;
+}
 
-  aside nav ul li a:hover {
-	color: var(--accent-color);
-  }
+aside nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  aside nav ul li a.current {
-	background-color: var(--accent-color);
-	color: var(--dark);
-  }
+aside nav ul li {
+  margin-bottom: 0.5em;
+}
 
-  aside nav ul li a.current:hover {
-	background-color: var(--accent-color);
-	color: var(--dark);
-  }
+aside nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5em;
+  transition: color 0.3s ease;
+}
+
+aside nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+aside nav ul li a.current {
+  background-color: var(--accent-color);
+  color: var(--dark);
+}
+
+aside nav ul li a.current:hover {
+  background-color: var(--accent-color);
+  color: var(--dark);
+}
