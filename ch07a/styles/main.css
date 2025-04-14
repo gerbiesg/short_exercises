@@ -101,3 +101,42 @@ footer {
 		padding-bottom: 0; 
 	}
 }
+
+aside nav {
+	background-color: var(--primary-color);
+	padding: 1em;
+  }
+  
+  aside nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  aside nav ul li {
+	margin-bottom: 0.5em;
+  }
+  
+  aside nav ul li a {
+	display: block;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;          
+	padding: 0.5em;
+	transition: color 0.3s ease;
+  }
+
+  aside nav ul li a:hover {
+	color: var(--accent-color);
+  }
+
+  aside nav ul li a.current {
+	background-color: var(--accent-color);
+	color: var(--dark);
+  }
+
+  aside nav ul li a.current:hover {
+	background-color: var(--accent-color);
+	color: var(--dark);
+  }
+  
