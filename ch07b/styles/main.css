@@ -102,7 +102,6 @@ aside {
 	}
 }
 
-/* the styles for the footer */
 footer {
 	background-color: var(--primary-color);
 	& p {
@@ -112,7 +111,6 @@ footer {
 	}
 }
 
-/* Navigation styles */
 .navbar {
     width: 100%;
 }
@@ -120,15 +118,15 @@ footer {
 .menu {
     list-style: none;
     display: flex;
-    justify-content: space-evenly; /* Evenly distributes items across the width */
-    flex-wrap: wrap; /* Allow items to wrap on small screens */
-    background-color: var(--primary-color);  /* Same background color as footer */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: var(--primary-color);
     margin: 0;
     padding: 0;
 }
 
 .menu li {
-    position: relative;  /* For submenu positioning */
+    position: relative;
 }
 
 .menu li a {
@@ -139,40 +137,37 @@ footer {
     font-weight: normal;
 }
 
-/* Default hover effect: italicize the text */
 .menu li a:hover {
     font-style: italic;
 }
 
-/* Style for the current page link */
 .menu li a.current {
     font-weight: bold;
     color: var(--accent-color);
 }
 
 .menu li a.current:hover {
-    font-style: normal; /* Do not change to italic on hover */
+    font-style: normal;
 }
 
-/* Submenu styling */
 .submenu {
-    display: none;  /* Hidden by default */
+    display: none;
     position: absolute;
-    top: 100%;      /* Directly below the parent item */
+    top: 100%;
     left: 0;
     background-color: var(--primary-color);
     list-style: none;
     padding: 0;
     margin: 0;
-    z-index: 100;   /* Display on top of main content */
-    min-width: 200px; /* Ensure a minimum width */
+    z-index: 100;
+    min-width: 200px;
 }
 
 .submenu li a {
     padding: 0.5em 1em;
 }
 
-/* Display the submenu on hover */
+
 .menu li:hover > .submenu {
     display: block;
 }
