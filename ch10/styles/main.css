@@ -1,10 +1,16 @@
-/* variables */
 :root {
 	--primary-color: #931420;
 	--accent-color: #f6bb73;
 	--light-accent: #fffded;
 	--light: white;
 	--dark: black;
+}
+
+@font-face {
+    font-family: 'InkFree';
+    src: url('../fonts/Inkfree.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* reset */
@@ -14,24 +20,41 @@
 	box-sizing: border-box;
 }
 
-/* the default styles for the elements */
+/* default styles */
 body {
 	font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
-    width: 80%;
-    margin: auto;
-    border: 3px solid var(--primary-color);
+	font-size: 100%;
+	width: 80%;
+	margin: auto;
+	border: 3px solid var(--primary-color);
 }
-header, section, aside, footer { padding: 1em; }
-h1, h2, h3, p, article, blockquote { padding-bottom: .5em; }
-h1 { font-size: 150%; }
-h2 { font-size: 120%; }
-h3 { font-size: 110%; }
-a:focus, a:hover { font-style: italic; }
-ul { list-style-type: none; }
-li { padding-bottom: .75em; }
 
-/* the styles for the header */
+header, section, aside, footer {
+	padding: 1em;
+}
+
+h1, h2, h3, p, article, blockquote {
+	padding-bottom: .5em;
+}
+
+section h1 {
+	font-family: 'InkFree', sans-serif;
+	font-size: 175%;
+}
+
+section a {
+	color: color-mix(in srgb, var(--accent-color) 65%, var(--primary-color) 35%);
+}
+
+aside h3 a {
+  color: color-mix(in srgb, var(--accent-color) 65%, var(--primary-color) 35%);
+}
+
+.contact-list a {
+  color: black;
+}
+
+/* header */
 header {
 	border-bottom: 3px solid var(--primary-color);
 	background-image: linear-gradient(30deg, 
@@ -40,78 +63,109 @@ header {
 		var(--light) 50%, 
 		var(--light-accent) 75%, 
 		var(--accent-color) 100%);
-	& h2 {
-		font-size: 175%;
-		color: var(--primary-color);
-		padding-bottom: 0;
-	}
-	& h3 {
-		font-size: 130%;
-		font-style: italic;
-	}
-	& img {
-		float: left;
-		margin: 0 30px;
-		width: clamp(40px, 15%, 66px);
-	}
 }
 
-/* the styles for the main element */
+header h2 {
+	font-size: 175%;
+	color: var(--primary-color);
+	padding-bottom: 0;
+}
+
+header h3 {
+	font-size: 130%;
+	font-style: italic;
+}
+
+header img {
+	float: left;
+	margin: 0 30px;
+	width: clamp(40px, 15%, 66px);
+}
+
+/* layout */
 main {
 	clear: left;
 	display: flex;
 }
 
-/* the styles for the section */
+/* section */
 section {
 	flex-basis: 75%;
-	& h1 {
-		padding-top: .5em;
-	}
-	& h2 {
-		color: var(--primary-color);
-	}
-	& article + h2 {
-		clear: left;
-		border-top: 3px solid var(--primary-color);
-		padding-top: .5em;
-	}
-	& blockquote {
-		font-style: italic;
-		margin-left: 2em;
-	}
 }
 
-/* the styles for the article */
+section h2 {
+	color: var(--primary-color);
+}
+
+section article + h2 {
+	clear: left;
+	border-top: 3px solid var(--primary-color);
+	padding-top: .5em;
+}
+
+section blockquote {
+	font-style: italic;
+	margin-left: 2em;
+}
+
+/* article */
 article {
 	border-top: 3px solid var(--primary-color);
 	padding-top: .5em;
 	margin-bottom: .5em;
-	& img {
-		float: left;
-		margin: .25em 1em 1em 0;
-		border: 1px solid var(--dark);
-		width: min(100%, 225px);
-	}
 }
 
-/* the styles for the aside */
+article figure {
+	float: left;
+	margin: .25em 1em 1em 0;
+	width: min(100%, 225px);
+	text-align: center;
+}
+
+article figure img {
+	width: 100%;
+	border: 1px solid var(--dark);
+	display: block;
+}
+
+article figure figcaption {
+	margin-bottom: .5em;
+	font-style: italic;
+}
+
+/* aside */
 aside {
 	flex-basis: 25%;
-	& h2 {
-		color: var(--primary-color);
-	}
-	& img {
-		margin-bottom: .9em;
-	}
 }
 
-/* the styles for the footer */
+aside h2 {
+	color: var(--primary-color);
+}
+
+aside img {
+	margin-bottom: .9em;
+}
+
+/* footer */
 footer {
 	background-color: var(--primary-color);
-	& p {
-		text-align: center;
-		color: white;
-		padding-bottom: 0; 
-	}
+}
+
+footer p {
+	text-align: center;
+	color: white;
+	padding-bottom: 0;
+}
+
+.contact-list img.icon {
+  width: 1em;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
