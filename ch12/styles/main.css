@@ -18,18 +18,79 @@ body {
     margin: auto;
     padding: 1em;
 }
+
 h1, h2, h3 {
     padding-bottom: .5em;
 }
+
 form, input, select, textarea {
     width:100%;
 }
+
 input, select, button {
     font-size: inherit;
     padding: .25em;
     margin-bottom: .5em;
     border-radius: 5px;
 }
+
 label {
     display: block;
 }
+
+.validate input:required:invalid,
+.validate select:required:invalid,
+.validate textarea:required:invalid {
+    border: 2px solid red;
+}
+.validate input:valid,
+.validate select:valid,
+.validate textarea:valid {
+    border: 2px solid green;
+}
+
+.btn {
+    font-weight: bold;
+    padding: .5em 1.2em;
+    border: none;
+    border-radius: 6px;
+    margin: .5em .25em 1em 0;
+    color: var(--light);
+    cursor: pointer;
+    transition: opacity .2s ease;
+}
+.btn:hover { opacity: .85; }
+
+.btn-submit { background: darkgreen; }
+.btn-reset  { background: red; }
+
+form fieldset {
+    padding: 1.25em 1.5em;
+    margin-bottom: 1.5em;
+    border: 1px solid #999;
+}
+
+form legend {
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding: 0 .25em;
+}
+
+form label {
+    display: block;
+    margin-top: .75em;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: .65em .75em;
+    margin-top: .25em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font: inherit;
+}
+
+textarea { border-radius: 6px; resize: vertical; }

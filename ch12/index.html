@@ -1,16 +1,67 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<title>Complete a Form</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete a Form</title>
 	<link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
-<h1>Please complete our survey</h1>
-<form action="confirmation.html" method="post">
-    
-</form>
+	<h1>Please complete our survey</h1>
+
+	<form action="confirmation.html" method="post">
+
+		<fieldset class="contact-info validate">
+			<legend>Contact information</legend>
+
+			<label for="email" accesskey="e">E-mail:</label>
+			<input  id="email"  name="email"  type="email" required autofocus>
+
+			<label for="first" accesskey="f">First name:</label>
+			<input  id="first"  name="first"  type="text"  required>
+
+			<label for="last"  accesskey="l">Last name:</label>
+			<input  id="last"   name="last"   type="text"  required>
+		</fieldset>
+
+		<fieldset class="geo-info validate">
+			<legend>Geographic information</legend>
+
+			<label for="state" accesskey="s">State:</label>
+			<input  id="state" name="state" type="text"
+			        placeholder="Two characters"
+			        pattern="[A-Za-z]{2}"
+			        title="Two-letter state abbreviation"
+			        required>
+
+			<label for="zip" accesskey="z">Zip code:</label>
+			<input  id="zip"   name="zip"   type="text"
+			        placeholder="5 digits"
+			        pattern="[0-9]{5}"
+			        title="Five-digit zip code"
+			        required>
+		</fieldset>
+
+		<fieldset>
+			<legend>Source</legend>
+
+			<label for="source">How did you hear about us?</label>
+			<select id="source" name="source" required>
+				<option selected>Web Search</option>
+				<option>Friend / Family</option>
+				<option>Magazine Ad</option>
+				<option>Social Media</option>
+				<option>Other</option>
+			</select>
+
+			<label for="comments">Comments:</label>
+			<textarea id="comments" name="comments" rows="4"></textarea>
+		</fieldset>
+
+		<button type="submit" class="btn btn-submit">Submit</button>
+		<button type="reset"  class="btn btn-reset">Reset</button>
+
+	</form>
 </body>
 </html>
