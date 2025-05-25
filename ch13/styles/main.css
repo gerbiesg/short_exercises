@@ -92,6 +92,15 @@ aside {
 	}
 }
 
+article img,
+article video {
+    float: left;
+    margin: .25em 1em 1em 0;
+    border: 1px solid var(--dark);
+    width: min(100%, 480px);
+}
+
+
 /* the styles for the footer */
 footer {
 	background-color: var(--primary-color);
